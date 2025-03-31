@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Prorrateo - GIGARED CENTRO S.A.C.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo">
+            <span class="gigared">GIGARED</span>  
+            <span class="centro">CENTRO S.A.C.</span>
+        </h1>
+        <h2>Calculadora de Prorrateo</h2>
+
+        <label for="monto">Monto Mensual (S/):</label>
+        <input type="number" id="monto" placeholder="Ingrese el monto mensual" min="1">
+
+        <label for="dias">Días a Cobrar:</label>
+        <input type="number" id="dias" placeholder="Ingrese los días" min="1">
+
+        <button onclick="calcularProrrateo()">Calcular</button>
+
+        <h3>Resultado: <span id="resultado">S/ -</span></h3>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* Reset General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Fondo con degradado más suave */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #1a1a1a, #550000);
+    color: #fff;
+}
+
+/* Contenedor con estilo mate */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Logo con animación */
+.logo {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.gigared {
+    color: #ff3333;
+    font-size: 1.4em;
+    font-weight: bold;
+    display: block;
+}
+
+.centro {
+    color: #ffffff;
+    font-size: 0.9em;
+    display: block;
+    letter-spacing: 1.2px;
+}
+
+/* Subtítulo */
+h2 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #ff6666;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeIn 1.4s ease-in-out forwards;
+}
+
+/* Inputs con animación y borde mate */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+}
+
+/* Botón con animación */
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    background: linear-gradient(to bottom, #880000, #ff3333);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #ff3333, #880000);
+    transform: scale(1.05);
+}
+
+/* Resultado con animación */
+h3 {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeIn 1.6s ease-in-out forwards;
+}
+
+#resultado {
+    font-weight: bold;
+    color: #ffcc00;
+    font-size: 1.3em;
+    text-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
