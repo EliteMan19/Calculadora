@@ -1,29 +1,56 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Prorrateo - GIGARED CENTRO S.A.C.</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>GIGARED PRO CALCULATOR</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="logo">
-            <span class="gigared">GIGARED</span>  
-            <span class="centro">CENTRO S.A.C.</span>
-        </h1>
-        <h2>Calculadora de Prorrateo</h2>
+    <header>
+        <h1><span class="gigared">GIGARED</span><br><span class="centro">CENTRO S.A.C.</span></h1>
+    </header>
 
-        <label for="monto">Monto Mensual (S/):</label>
-        <input type="number" id="monto" placeholder="Ingrese el monto mensual" min="1">
+    <main>
+        <!-- Calculadora Principal -->
+        <section id="calc-principal">
+            <h2>Prorrateo Clásico</h2>
+            <label>Monto mensual (S/):</label>
+            <input type="number" id="monto" placeholder="Ej. 70">
+            <label>Días a cobrar:</label>
+            <input type="number" id="dias" placeholder="Ej. 58">
+            <button onclick="calcularProrrateo()">Calcular</button>
+            <p id="resultado"></p>
+            <button class="toggle-btn" onclick="mostrarZona()">Ir a cálculo por zonas</button>
+        </section>
 
-        <label for="dias">Días a Cobrar:</label>
-        <input type="number" id="dias" placeholder="Ingrese los días" min="1">
+        <!-- Calculadora por Zonas -->
+        <section id="calc-zona" style="display: none;">
+            <h2>Prorrateo por Zona</h2>
+            <label for="zona">Selecciona tu zona:</label>
+            <select id="zona" onchange="actualizarFechaPago()">
+                <option value="10">Quilcas</option>
+                <option value="10">San Pedro</option>
+                <option value="20">Pilcomayo</option>
+                <option value="20">Hualhuas</option>
+                <option value="30">Otras zonas</option>
+            </select>
 
-        <button onclick="calcularProrrateo()">Calcular</button>
+            <label>Monto mensual (S/):</label>
+            <input type="number" id="montoZona" placeholder="Ej. 70">
 
-        <h3>Resultado: <span id="resultado">S/ -</span></h3>
-    </div>
+            <label>Fecha de inicio:</label>
+            <input type="date" id="fechaInicio">
+
+            <label>Fecha de pago:</label>
+            <input type="date" id="fechaPago">
+
+            <button onclick="calcularZona()">Calcular</button>
+            <p id="resultadoZona"></p>
+            <button class="toggle-btn" onclick="mostrarPrincipal()">Volver</button>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
